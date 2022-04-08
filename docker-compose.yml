@@ -1,0 +1,14 @@
+version: "2.1"
+services:
+  nfs:
+    image: openebs/nfs-server-alpine:0.8.0
+    container_name: nfs
+    restart: unless-stopped
+    privileged: true
+    environment:
+      SHARED_DIRECTORY: "/data"
+      CUSTOM_EXPORTS_CONFIG: "/data *(rw,fsid=0,sync,no_subtree_check,no_auth_nlm,insecure,no_root_squash,crossmnt)"
+    volumes:
+      - /mnt:/data
+    ports:
+      - 2049:2049
