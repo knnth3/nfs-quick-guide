@@ -18,15 +18,3 @@ docker logs <id>
 sudo apt install nfs-client -y
 sudo mount -v -o vers=4,loud 10.124.16.7:/ /mnt
 df -h
-
-# -----------------Mounting DO Block Storages-----------------
-# Create a mount point for your volume:
-mkdir -p /mnt/om
-
-# Mount your volume at the newly-created mount point:
-mount -o discard,defaults,noatime /dev/disk/by-id/scsi-0DO_Volume_om-core-nfs1 /mnt/om
-
-# Change fstab so the volume will be mounted after a reboot
-echo '/dev/disk/by-id/scsi-0DO_Volume_om-core-nfs1 /mnt/om ext4 defaults,nofail,discard 0 0' | sudo tee -a /etc/fstab
-
-# Remember to reboot droplet for changes to take effect
