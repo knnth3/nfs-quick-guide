@@ -1,4 +1,4 @@
-Simple step-by-step guid to set up a quick NFS server on Linux using Docker
+Simple step-by-step guide to set up a quick NFS server on Linux using Docker
 
 # Run this command to install docker & docker-compose:latest
 sh install-docker.sh
