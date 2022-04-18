@@ -16,5 +16,5 @@ docker logs <id>
 
 # --------------Mounting filesystems from a client------------
 sudo apt install nfs-client -y
-sudo mount -v -o vers=4,loud 10.124.16.7:/ /mnt
+sudo mount -v -o vers=4,loud [SERVER_IP]:/ /mnt
 df -h
